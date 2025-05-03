@@ -3,7 +3,7 @@ var snowY = [50, 70, 40, 20];
 
 var myGreeting = ["❄️","❄️","❄️"];
 
-var myAge = ["35 min","42 min","8 min"];
+var myAge = ["55 min","33 min","22 min"];
 
 var myAg = ["Eliza left","Aaliyah Left","Evangelisa left"];
 
