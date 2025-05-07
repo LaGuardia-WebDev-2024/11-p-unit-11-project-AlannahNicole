@@ -1,188 +1,68 @@
 var snowX = [100, 120, 160, 200];
 var snowY = [50, 70, 40, 20];
+var fallImage = loadImage("https://imageio.forbes.com/specials-images/imageserve/66f49fbaf758d71647915d59/0x0.jpg?format=jpg&height=600&width=1200&fit=bounds");
 
-var myGreeting = ["❄️","❄️","❄️"];
-
-var myAge = ["55 min","33 min","22 min"];
-
-var myAg = ["Eliza left","Aaliyah Left","Evangelisa left"];
-
-setup = function() {
-   size(600, 450); 
-   background(164, 212, 255);
-   
-   
-drawFish(200, 300, color(148,0,211));            
-
-};
-
-var drawFish = function(fishX, fishY, fishColor){
-
-fill(fishColor);
-
-strokeWeight(1);
-
-stroke(0,0,0);
-
-ellipse(fishX+20,fishY,13,25); //tail
-  
-ellipse(fishX,fishY,40,20); //body
-
-fill(0,0,0);
-
-ellipse(fishX-10,fishY-2, 3 ,5); //eye
-
-fill(226, 90, 76 );
-
-ellipse(fishX-12,fishY+4,10,3); //mouth
-
-};
-
-
-draw = function()   {
-
-   
-
-fill (255,255,255)
-
-textSize(40);
-
-for(var i = 0; i < snowX.length; i++){
-
-text("❆", snowX[i], snowY[i]);
-
-   }
-
-   
-fill(230,255,255);
-
-rect(-10, 300, 610, 150);
-
-
-if(mousePressed){
-
-  snowX.push(mouseX);
-
-  snowY.push(mouseY);
+setup= function(){
+size(600,400)
 
 }
 
+draw=function(){
+background(226, 94, 52);
 
+//Example Function Call
+drawShark(100, -50);
 
-th
+image(fallImage, 200, 180, 250, 120);
 
-};
+//fallImage, 200, 180, 120, 120);
 
+var myLeafs = ["🍁", "🍂", "🍃"];
 
-draw = function()   {
-  
+textSize(40)
 
-  fill (255,255,255)
+fill(255, 0, 0);
+text(myLeafs[0], 10, 30);
+text(myLeafs[1], 10, 80);
+text(myLeafs[2], 10, 130);
 
-   textSize(40);
+var myPeople = ["👱🏼‍♀️", "👩🏽‍🦱", "👧🏿"];
+text(myPeople[0], 10, 300);
+text(myPeople[1], 10, 350);
+text(myPeople[2], 10, 400);
 
-   for(var i = 0; i < snowX.length; i++){
+var myAnimals = ["🐨", "🦉", "🐗"];
+text(myAnimals[0], 10, 230);
+text(myAnimals[1], 10, 175);
+text(myAnimals[2], 10, 265);
 
-     text("❆", snowX[i], snowY[i]);
-
-   }
-
-   fill(230,255,255);
-
-   rect(-10, 300, 610, 150);
-
-
-if(mousePressed){
-
-  snowX.push(mouseX);
-
-  snowY.push(mouseY);
+x= 0
+while(x < 400){
+text("🍁", x, 200);
+x += 60;
 
 }
+}
 
-for (var i = 100; i < 600; i += 200) {
+//Function Definition
+var drawShark = function(sharkX, sharkY){
+  fill(150, 176, 176);
+  noStroke();
+  ellipse(sharkX + 315, sharkY + 146, 200, 60);
+  triangle(sharkX + 290, sharkY + 121, sharkX + 338, sharkY + 89, sharkX + 343, sharkY + 117);
+  triangle(sharkX + 390, sharkY + 144, sharkX + 445, sharkY + 144, sharkX + 473, sharkY + 114);
+  triangle(sharkX + 390, sharkY + 144, sharkX + 445, sharkY + 144, sharkX + 473, sharkY + 174);
+  triangle(sharkX + 250, sharkY + 163, sharkX + 290, sharkY + 169, sharkX + 290, sharkY + 190);
+  triangle(sharkX + 378, sharkY + 163, sharkX + 400, sharkY + 168, sharkX + 390, sharkY + 175);
+  fill(200, 200, 200);
+  ellipse(sharkX + 315, sharkY + 159, 175, 30);
+  strokeWeight(10);
+  stroke(0, 0, 0);
+  point(sharkX + 234, sharkY + 142);
+  stroke(120, 120, 120);
+  strokeWeight(4);
+  line(sharkX + 275, sharkY + 165, sharkX + 279, sharkY + 146);
+  line(sharkX + 267, sharkY + 161, sharkX + 273, sharkY + 144);
+  line(sharkX + 260, sharkY + 157, sharkX + 266, sharkY + 145)
+  };
 
-    fill(255,255,255)
-
-  ellipse(i,300,140,140)     
-
-  };
-
-
-for (var i = 100; i < 600; i += 200) {
-
-    fill(255,255,255)
-
-  ellipse(i,235,110,110)     
-
-  };
-
-
-for (var i = 100; i < 600; i += 200) {
-
-fill(255,255,255)
-
-ellipse(i,175,70,70)     
-
-};
-
-  
-textSize(20);
-
-fill(148,0,211);
-
-text(myAg[0], 80, 400);
-
-text(myAg[1], 280 , 400 );
-
-text(myAg[2], 490 , 400);
-
-  
-
-textSize(20);
-
-fill(148,0,211);
-
-text(myAge[0], 80, 430);
-
-text(myAge[1], 290 , 430 );
-
-text(myAge[2], 505 , 430);
- 
-
-textSize(20);
-
-fill(148,0,211);
-
-text(myGreeting[0], 60 , 125);
-
-text(myGreeting[1], 280 , 125 );
-
-text(myGreeting[2], 475 , 125);
-
-  
-fill(0,0,0)
-
-ellipse (85,160,5,5)
-
-ellipse (110,160,5,5)
-
-ellipse (285,160,5,5)
-
-ellipse (310,160,5,5)
-
-ellipse (485,160,5,5)
-
-ellipse (510,160,5,5)
-  
-fill (255, 165, 0 )
-
-triangle(100, 170, 130, 180, 100, 190)
-  
-triangle(300, 170, 330, 180,300, 190)
-
-triangle(500, 170, 530, 180,500, 190)
-
-};
-
-   
